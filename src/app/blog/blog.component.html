@@ -1,0 +1,30 @@
+<div>
+  <h2>Noticias</h2>
+  <ul class="listadoNoticias">
+    <li *ngFor="let noticia of noticias">
+      <h3>{{ noticia.titulo }}</h3>
+      <img [src]="noticia.imagen" alt="{{ noticia.titulo }}" />
+      <p>{{ noticia.texto }}</p>
+      <p>Fecha de publicación: {{ noticia.fecha }}</p>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>Formulario de publicación de noticias</h2>
+  <form class="formulario" (submit)="agregarNoticia($event)">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" required />
+
+    <label for="imagen">Imagen (URL):</label>
+    <input type="text" id="imagen" required />
+
+    <label for="texto">Texto:</label>
+    <textarea id="texto" required></textarea>
+
+    <label for="fecha">Fecha de publicación:</label>
+    <input type="date" id="fecha" required />
+
+    <button type="submit">Publicar</button>
+  </form>
+</div>
